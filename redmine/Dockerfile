@@ -35,8 +35,19 @@ RUN set -eux; \
         gosu redmine git clone --depth 1 https://github.com/danmunn/redmine_dmsf.git plugins/redmine_dmsf; \
         gosu redmine git clone --depth 1 https://github.com/onozaty/redmine-view-customize.git plugins/view_customize; \
 	gosu redmine git clone --depth 1 https://github.com/haru/redmine_wiki_extensions.git plugins/redmine_wiki_extensions; \
-        gosu redmine git clone --depth 1 https://github.com/haru/redmine_theme_changer.git plugins/redmine_theme_changer; \	
+        gosu redmine git clone --depth 1 https://github.com/haru/redmine_theme_changer.git plugins/redmine_theme_changer; \
+	gosu redmine git clone --depth 1 https://github.com/AlphaNodes/redmine_lightbox.git plugins/redmine_lightbox; \
+	gosu redmine git clone --depth 1 https://github.com/ryouma-nagare/redmine_jstoolbar_ext.git plugins/redmine_jstoolbar_ext; \
+	gosu redmine git clone --depth 1 https://github.com/ryouma-nagare/redmine_jstoolbar_ext_buttons.git plugins/redmine_jstoolbar_ext_buttons; \
+        gosu redmine git clone --depth 1 https://github.com/tkusukawa/redmine_wiki_lists.git plugins/redmine_wiki_lists; \		
+        gosu redmine git clone --depth 1 https://github.com/hikuram/redmine_already_read.git plugins/redmine_already_read; \
+	gosu redmine git clone --depth 1 https://github.com/hikuram/redmine_app_notifications.git plugins/redmine_app_notifications; \
 	gosu redmine git clone --depth 1 https://github.com/nanego/redmine_hide_sidebar.git plugins/redmine_hide_sidebar; \
+	gosu redmine git clone --depth 1 https://github.com/taqueci/redmine_local_avatars.git plugins/redmine_local_avatars; \
+	gosu redmine git clone --depth 1 https://github.com/taqueci/redmine_wysiwyg_editor.git  plugins/redmine_wysiwyg_editor; \
+	gosu redmine git clone --depth 1 https://github.com/HugoHasenbein/redmine_more_previews.git plugins/redmine_more_previews; \
+	rm -rf plugins/redmine_more_previews/converters/zippy; \
+	gosu redmine git clone https://gitlab.com/redmine-plugin-description-sidebar/redmine-plugin-description-sidebar.git plugins/description_sidebar; \
         \
 # install themes
         gosu redmine git clone --depth 1 https://github.com/farend/redmine_theme_farend_basic.git public/themes/farend_basic; \
