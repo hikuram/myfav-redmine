@@ -1,4 +1,4 @@
-FROM postgres:12
+FROM postgres:14
 
 RUN set -eux; \
         \
@@ -11,11 +11,11 @@ RUN set -eux; \
         mkdir pgroonga-work; \
         cd pgroonga-work; \
         \
-        wget https://packages.groonga.org/debian/groonga-apt-source-latest-buster.deb; \
-        apt-get install -y ./groonga-apt-source-latest-buster.deb; \
+        wget https://packages.groonga.org/debian/groonga-apt-source-latest-bullseye.deb; \
+        apt-get install -y ./groonga-apt-source-latest-bullseye.deb; \
         apt-get update && apt-get install -y --no-install-recommends \
+                postgresql-14-pgdg-pgroonga \
                 groonga-tokenizer-mecab \
-                postgresql-12-pgroonga \
         ; \
         rm -rf /var/lib/apt/lists/*; \
         \
