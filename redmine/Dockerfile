@@ -10,7 +10,7 @@ RUN set -eux; \
                 catdvi \
                 djview \
                 djview3 \
-                gcc \
+                build-essential \
                 gzip \
                 libemail-outlook-message-perl \
                 libwpd-tools \
