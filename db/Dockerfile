@@ -2,8 +2,9 @@ FROM postgres:14
 
 RUN set -eux; \
         \
-        apt-get update && apt-get install -y --no-install-recommends \
+        apt update && apt install -y --no-install-recommends \
                 ca-certificates \
+                lsb-release \
                 wget \
         ; \
         rm -rf /var/lib/apt/lists/*; \
@@ -11,10 +12,13 @@ RUN set -eux; \
         mkdir pgroonga-work; \
         cd pgroonga-work; \
         \
-        wget https://packages.groonga.org/debian/groonga-apt-source-latest-bullseye.deb; \
-        apt-get install -y ./groonga-apt-source-latest-bullseye.deb; \
-        apt-get update && apt-get install -y --no-install-recommends \
-                postgresql-14-pgdg-pgroonga \
+        wget https://apache.jfrog.io/artifactory/arrow/$(lsb_release --id --short | tr 'A-Z' 'a-z')/apache-arrow-apt-source-latest-$(lsb_release --codename --short).deb; \
+        apt install -y -V ./apache-arrow-apt-source-latest-$(lsb_release --codename --short).deb; \
+        apt update; \
+        wget https://packages.groonga.org/debian/groonga-apt-source-latest-$(lsb_release --codename --short).deb; \
+        apt install -y -V ./groonga-apt-source-latest-$(lsb_release --codename --short).deb; \
+        apt update && apt install -y -V \
+                groonga \
                 groonga-tokenizer-mecab \
         ; \
         rm -rf /var/lib/apt/lists/*; \
