@@ -10,7 +10,7 @@ RUN set -eux; \
                 catdvi \
                 djview \
                 djview3 \
-                build-essential \
+                gcc g++ \
                 gzip \
                 libemail-outlook-message-perl \
                 libwpd-tools \
@@ -24,7 +24,6 @@ RUN set -eux; \
                 unrtf \
                 unzip \
                 xapian-omega \
-                xpdf \
                 xz-utils \
         ; \
         rm -rf /var/lib/apt/lists/*; \
