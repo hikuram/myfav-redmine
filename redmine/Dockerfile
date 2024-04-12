@@ -24,7 +24,9 @@ RUN set -eux; \
         gosu redmine git clone --depth 1 https://github.com/taqueci/redmine_local_avatars.git plugins/redmine_local_avatars; \
         gosu redmine git clone --depth 1 https://github.com/taqueci/redmine_wysiwyg_editor.git  plugins/redmine_wysiwyg_editor; \
         gosu redmine git clone --depth 1 https://github.com/HugoHasenbein/redmine_more_previews.git plugins/redmine_more_previews; \
-        gosu redmine git clone https://gitlab.com/redmine-plugin-description-sidebar/redmine-plugin-description-sidebar.git plugins/description_sidebar; \
+        gosu redmine git clone --depth 1 https://gitlab.com/redmine-plugin-description-sidebar/redmine-plugin-description-sidebar.git plugins/description_sidebar; \
+        gosu redmine git clone --depth 1 https://github.com/redmica/redmine_ip_filter.git plugins/redmine_ip_filter; \
+        gosu redmine git clone --depth 1 https://github.com/yzzy/redmine_tags.git plugins/redmine_tags; \
         \
 # install themes
         gosu redmine git clone --depth 1 https://github.com/farend/redmine_theme_farend_basic.git public/themes/farend_basic; \
