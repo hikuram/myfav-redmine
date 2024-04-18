@@ -16,6 +16,8 @@ RUN set -eux; \
         gosu redmine git clone --depth 1 https://github.com/onozaty/redmine-view-customize.git plugins/view_customize; \
         gosu redmine git clone --depth 1 https://github.com/haru/redmine_wiki_extensions.git plugins/redmine_wiki_extensions; \
         gosu redmine git clone --depth 1 https://github.com/haru/redmine_theme_changer.git plugins/redmine_theme_changer; \
+        gosu redmine git clone -b stable --depth 1 https://github.com/AlphaNodes/additionals.git plugins/additionals; \
+        gosu redmine git clone --depth 1 https://github.com/AlphaNodes/additional_tags.git plugins/additional_tags; \
         gosu redmine git clone --depth 1 https://github.com/AlphaNodes/redmine_lightbox.git plugins/redmine_lightbox; \
         gosu redmine git clone --depth 1 https://github.com/ryouma-nagare/redmine_jstoolbar_ext.git plugins/redmine_jstoolbar_ext; \
         gosu redmine git clone --depth 1 https://github.com/ryouma-nagare/redmine_jstoolbar_ext_buttons.git plugins/redmine_jstoolbar_ext_buttons; \
@@ -26,7 +28,6 @@ RUN set -eux; \
         gosu redmine git clone --depth 1 https://github.com/HugoHasenbein/redmine_more_previews.git plugins/redmine_more_previews; \
         gosu redmine git clone --depth 1 https://gitlab.com/redmine-plugin-description-sidebar/redmine-plugin-description-sidebar.git plugins/description_sidebar; \
         gosu redmine git clone --depth 1 https://github.com/redmica/redmine_ip_filter.git plugins/redmine_ip_filter; \
-        gosu redmine git clone --depth 1 https://github.com/yzzy/redmine_tags.git plugins/redmine_tags; \
         \
 # install themes
         gosu redmine git clone --depth 1 https://github.com/farend/redmine_theme_farend_basic.git public/themes/farend_basic; \
