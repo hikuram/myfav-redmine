@@ -33,7 +33,7 @@ RUN set -eux; \
         gosu redmine git clone --depth 1 https://www.github.com/sk-ys/redmine_gantt_tweak plugins/redmine_gantt_tweak; \
         gosu redmine curl --location https://github.com/ONLYOFFICE/onlyoffice-redmine/releases/latest/download/onlyoffice_redmine.tar.zst --output onlyoffice_redmine.tar.zst; \
         gosu redmine tar --extract --file onlyoffice_redmine.tar.zst --directory plugins; \
-        gosu rm onlyoffice_redmine.tar.zst; \
+        gosu redmine rm onlyoffice_redmine.tar.zst; \
         \
 # install themes
         gosu redmine git clone --depth 1 https://github.com/farend/redmine_theme_farend_basic.git public/themes/farend_basic; \
