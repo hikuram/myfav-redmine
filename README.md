@@ -30,7 +30,6 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
         * Redmine 本体： `/var/log/redmine`
         * ChupaText サーバー： `/var/log/redmine-chupa-text`
 1. データベース名／ユーザー／パスワードを `/opt/myfav-redmine/docker-compose.yml` に直書きしているので、必要に応じて変更してください。（動作の確認する程度の利用であればそのままでもよいです）
-1. [Redmine theme for kids / Kodomo Redmine](https://github.com/akiko-pusu/redmine_theme_kodomo) と [Redmine theme for kids midori version / Kodomo Redmine green version](https://github.com/akiko-pusu/redmine_theme_kodomo_midori) に追加フォントを組み込む場合、 `/opt/myfav-redmine/redmine/optional/redmine_theme_kodomo/font` ディレクトリに ttf ファイルを配置してください。
 1. 以下のコマンドを実行して、Docker Compose からビルド・起動させます。
 
     ```bash
@@ -63,37 +62,33 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 
 | サービス    |  使用バージョン | 特記事項 |
 |:---|:---|:---|
-| Redmine      | 4.1 系の最新版 | 後述のプラグイン、テーマを追加インストール |
-| PostgreSQL   | 12 系の最新版 | PGroonga、 TokenMecab を追加インストール |
+| Redmine      | 5 系の最新版 | 後述のプラグイン、テーマを追加インストール |
+| PostgreSQL   | 15 系の最新版 | PGroonga、 TokenMecab を追加インストール |
 | ChupaText    | 最新版 | |
 
 ### Redmine プラグイン
 
 使用バージョンはすべて最新版です。
 
-* [Redmine Banner plugin](https://github.com/akiko-pusu/redmine_banner)
-* [Redmine Issue Badge plugin](https://github.com/akiko-pusu/redmine_issue_badge)
-* [Redmine Issue Templates plugin](https://github.com/akiko-pusu/redmine_issue_templates)
-* [Sidebar Hide Plugin](https://github.com/bizyman/sidebar_hide)
-* [Scheduling Poll plugin](https://github.com/cat-in-136/redmine_scheduling_poll)
-* [Full Text Search plugin](https://github.com/clear-code/redmine_full_text_search)
-* [DMSF](https://github.com/danmunn/redmine_dmsf)
-* [Redmine Pivot Table plugin](https://github.com/deecay/redmine_pivot_table)
-* [Redmine Logs plugin](https://github.com/haru/redmine_logs)
-* [Redmine Theme Changer plugin](https://github.com/haru/redmine_theme_changer)
-* [Redmine Wiki Extensions Plugin](https://github.com/haru/redmine_wiki_extensions)
-* [Redmine Default Custom Query](https://github.com/hidakatsuya/redmine_default_custom_query)
-    * 初回起動時に有効にしていると起動エラーが発生するのでコメントアウトしています。初回起動を確認した後でコメントアウトを外すと利用できます。
-* [Redmine message customize plugin](https://github.com/ishikawa999/redmine_message_customize)
-* [Redmine Drafts plugin](https://github.com/jbbarth/redmine_drafts)
-    * 依存関係解決のため [Redmine Base Deface plugin](https://github.com/jbbarth/redmine_base_deface) を追加している
-* [Redmine Drawio plugin](https://github.com/mikitex70/redmine_drawio)
-* [View Customize plugin](https://github.com/onozaty/redmine-view-customize)
-* [Redmine Issues Panel](https://github.com/redmica/redmine_issues_panel)
-* [Redmine Stealth Plugin](https://github.com/Smile-SA/redmine_stealth)
-* [Redmine Enter Cancel plugin](https://github.com/suer/redmine_enter_cancel)
-* [Redmine Work Time plugin](https://github.com/tkusukawa/redmine_work_time)
-* [Redmine XLSX format issue exporter](https://github.com/two-pack/redmine_xlsx_format_issue_exporter)
+* https://github.com/agileware-jp/redmine_banner
+* https://github.com/clear-code/redmine_full_text_search
+* https://github.com/onozaty/redmine-view-customize
+* https://github.com/haru/redmine_wiki_extensions
+* https://github.com/haru/redmine_theme_changer
+* https://github.com/hikuram/additionals
+* https://github.com/AlphaNodes/additional_tags
+* https://github.com/AlphaNodes/redmine_lightbox
+* https://github.com/ryouma-nagare/redmine_jstoolbar_ext
+* https://github.com/ryouma-nagare/redmine_jstoolbar_ext_buttons
+* https://github.com/hikuram/redmine_already_read
+* https://github.com/nanego/redmine_hide_sidebar
+* https://github.com/taqueci/redmine_local_avatars
+* https://github.com/hikuram/redmine_wysiwyg_editor
+* https://github.com/HugoHasenbein/redmine_more_previews
+* https://gitlab.com/redmine-plugin-description-sidebar/redmine-plugin-description-sidebar
+* https://github.com/redmica/redmine_ip_filter
+* https://github.com/sk-ys/redmine_gantt_tweak
+* https://github.com/ONLYOFFICE/onlyoffice-redmine
 
 ### Redmine テーマ
 
@@ -103,8 +98,6 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 * [Redmine用テーマ "farend basic"](https://github.com/farend/redmine_theme_farend_basic)
 * [Redmine用テーマ "farend fancy"](https://github.com/farend/redmine_theme_farend_fancy)
 * [Redmine gitmike theme](https://github.com/makotokw/redmine-theme-gitmike)
-* [Redmine theme for kids / Kodomo Redmine](https://github.com/akiko-pusu/redmine_theme_kodomo)
-* [Redmine theme for kids midori version / Kodomo Redmine green version](https://github.com/akiko-pusu/redmine_theme_kodomo_midori) 
 
 ## ライセンス
 
