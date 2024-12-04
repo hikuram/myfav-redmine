@@ -1,4 +1,4 @@
-FROM redmine:5
+FROM redmine:6
 
 COPY --chown=redmine:redmine ./config/configuration.yml config
 
