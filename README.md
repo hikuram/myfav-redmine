@@ -34,7 +34,7 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 
     ```bash
     $ cd /opt/myfav-redmine
-    $ dockerc ompose up -d --build
+    $ docker compose up -d --build
     ```
 1. http://localhost:3000 にアクセスして、Redmine の初期設定を行います。
     * データベースに登録されるタイプの設定は素の Redmine と同等です。そのため、[デフォルトデータのロード](http://redmine.jp/tech_note/first-step/admin/load_default_data/) も必要となります。
