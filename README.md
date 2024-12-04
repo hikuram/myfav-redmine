@@ -34,7 +34,7 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 
     ```bash
     $ cd /opt/myfav-redmine
-    $ docker-compose up -d --build
+    $ dockerc ompose up -d --build
     ```
 1. http://localhost:3000 にアクセスして、Redmine の初期設定を行います。
     * データベースに登録されるタイプの設定は素の Redmine と同等です。そのため、[デフォルトデータのロード](http://redmine.jp/tech_note/first-step/admin/load_default_data/) も必要となります。
@@ -62,7 +62,7 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 
 | サービス    |  使用バージョン | 特記事項 |
 |:---|:---|:---|
-| Redmine      | 5 系の最新版 | 後述のプラグイン、テーマを追加インストール |
+| Redmine      | 6 系の最新版 | 後述のプラグイン、テーマを追加インストール |
 | PostgreSQL   | 15 系の最新版 | PGroonga、 TokenMecab を追加インストール |
 | ChupaText    | 最新版 | |
 
@@ -70,25 +70,16 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 
 使用バージョンはすべて最新版です。
 
-* https://github.com/agileware-jp/redmine_banner
 * https://github.com/clear-code/redmine_full_text_search
 * https://github.com/onozaty/redmine-view-customize
 * https://github.com/haru/redmine_wiki_extensions
 * https://github.com/haru/redmine_theme_changer
-* https://github.com/hikuram/additionals
-* https://github.com/AlphaNodes/additional_tags
 * https://github.com/AlphaNodes/redmine_lightbox
-* https://github.com/ryouma-nagare/redmine_jstoolbar_ext
-* https://github.com/ryouma-nagare/redmine_jstoolbar_ext_buttons
 * https://github.com/hikuram/redmine_already_read
 * https://github.com/nanego/redmine_hide_sidebar
 * https://github.com/taqueci/redmine_local_avatars
-* https://github.com/hikuram/redmine_wysiwyg_editor
+* https://github.com/taqueci/redmine_wysiwyg_editor
 * https://github.com/HugoHasenbein/redmine_more_previews
-* https://gitlab.com/redmine-plugin-description-sidebar/redmine-plugin-description-sidebar
-* https://github.com/redmica/redmine_ip_filter
-* https://github.com/sk-ys/redmine_gantt_tweak
-* https://github.com/ONLYOFFICE/onlyoffice-redmine
 
 ### Redmine テーマ
 
@@ -97,7 +88,6 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 * [Redmine用テーマ "farend bleuclair"](https://github.com/farend/redmine_theme_farend_bleuclair)
 * [Redmine用テーマ "farend basic"](https://github.com/farend/redmine_theme_farend_basic)
 * [Redmine用テーマ "farend fancy"](https://github.com/farend/redmine_theme_farend_fancy)
-* [Redmine gitmike theme](https://github.com/makotokw/redmine-theme-gitmike)
 
 ## ライセンス
 
