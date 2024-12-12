@@ -75,11 +75,8 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 * https://github.com/haru/redmine_wiki_extensions
 * https://github.com/haru/redmine_theme_changer
 * https://github.com/AlphaNodes/redmine_lightbox
-* https://github.com/hikuram/redmine_already_read
-* https://github.com/nanego/redmine_hide_sidebar
 * https://github.com/taqueci/redmine_local_avatars
 * https://github.com/taqueci/redmine_wysiwyg_editor
-* https://github.com/HugoHasenbein/redmine_more_previews
 
 ### Redmine テーマ
 
