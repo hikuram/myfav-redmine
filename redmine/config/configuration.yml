@@ -13,6 +13,7 @@ default:
   # See the examples below and the Rails guide for more configuration options:
   # http://guides.rubyonrails.org/action_mailer_basics.html#action-mailer-configuration
   email_delivery:
+    delivery_method: :file
 
   # ==== Simple SMTP server at localhost
   #
