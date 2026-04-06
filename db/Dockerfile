@@ -1,4 +1,4 @@
-FROM postgres:15-bookworm
+FROM postgres:17-trixie
 
 RUN set -eux; \
         \
@@ -18,7 +18,7 @@ RUN set -eux; \
         wget https://packages.groonga.org/debian/groonga-apt-source-latest-$(lsb_release --codename --short).deb; \
         apt install -y -V ./groonga-apt-source-latest-$(lsb_release --codename --short).deb; \
         apt update && apt install -y -V \
-                postgresql-15-pgdg-pgroonga \
+                postgresql-17-pgdg-pgroonga \
                 groonga-tokenizer-mecab \
         ; \
         rm -rf /var/lib/apt/lists/*; \
