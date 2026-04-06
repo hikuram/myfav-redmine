@@ -17,11 +17,8 @@ RUN set -eux; \
         gosu redmine git clone --depth 1 https://github.com/haru/redmine_wiki_extensions.git plugins/redmine_wiki_extensions; \
         gosu redmine git clone --depth 1 https://github.com/haru/redmine_theme_changer.git plugins/redmine_theme_changer; \
         gosu redmine git clone --depth 1 https://github.com/AlphaNodes/redmine_lightbox.git plugins/redmine_lightbox; \
-        #aosu redmine git clone --depth 1 https://github.com/ryouma-nagare/redmine_jstoolbar_ext.git plugins/redmine_jstoolbar_ext; \
-        #gosu redmine git clone --depth 1 https://github.com/ryouma-nagare/redmine_jstoolbar_ext_buttons.git plugins/redmine_jstoolbar_ext_buttons; \
-        gosu redmine git clone --depth 1 https://github.com/taqueci/redmine_local_avatars.git plugins/redmine_local_avatars; \
         gosu redmine git clone --depth 1 https://github.com/taqueci/redmine_wysiwyg_editor.git  plugins/redmine_wysiwyg_editor; \
-        #gosu redmine git clone --depth 1 https://github.com/HugoHasenbein/redmine_more_previews.git plugins/redmine_more_previews; \
+        gosu redmine git clone --depth 1 https://github.com/hikuram/redmine_bell_notifications.git  plugins/redmine_bell_notifications; \
         \
 # install themes
         gosu redmine git clone --depth 1 https://github.com/farend/redmine_theme_farend_basic.git themes/farend_basic; \
