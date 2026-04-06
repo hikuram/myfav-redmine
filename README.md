@@ -63,7 +63,7 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 | サービス    |  使用バージョン | 特記事項 |
 |:---|:---|:---|
 | Redmine      | 6 系の最新版 | 後述のプラグイン、テーマを追加インストール |
-| PostgreSQL   | 15 系の最新版 | PGroonga、 TokenMecab を追加インストール |
+| PostgreSQL   | 17 系の最新版 | PGroonga、 TokenMecab を追加インストール |
 | ChupaText    | 最新版 | |
 
 ### Redmine プラグイン
@@ -75,8 +75,8 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 * https://github.com/haru/redmine_wiki_extensions
 * https://github.com/haru/redmine_theme_changer
 * https://github.com/AlphaNodes/redmine_lightbox
-* https://github.com/taqueci/redmine_local_avatars
 * https://github.com/taqueci/redmine_wysiwyg_editor
+* https://github.com/Akshaychdev/redmine_bell_notifications
 
 ### Redmine テーマ
 
