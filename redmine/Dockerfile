@@ -2,13 +2,26 @@ FROM redmine:7
 
 COPY --chown=redmine:redmine ./config/configuration.yml config
 
+ARG PANDOC_VERSION=3.10
+ARG PANDOC_DEB=pandoc-3.10-1-amd64.deb
+ARG PANDOC_SHA256=d502599878eb29af3ae5f0cb5d559134df96534125d452c7a0674a5bad2c5ecf
+
 RUN set -eux; \
         \
         apt-get update && apt-get install -y --no-install-recommends \
+                ca-certificates \
+                wget \
                 gcc g++ \
                 make \
                 nano \
         ; \
+        \
+# install pandoc
+        wget -O /tmp/pandoc.deb "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/${PANDOC_DEB}"; \
+        echo "${PANDOC_SHA256}  /tmp/pandoc.deb" | sha256sum -c -; \
+        apt-get install -y --no-install-recommends /tmp/pandoc.deb; \
+        rm -f /tmp/pandoc.deb; \
+        pandoc --version; \
         rm -rf /var/lib/apt/lists/*; \
         \
 # install plugins
