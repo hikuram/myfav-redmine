@@ -32,6 +32,8 @@ RUN set -eux; \
         gosu redmine git clone --depth 1 https://github.com/AlphaNodes/redmine_lightbox.git plugins/redmine_lightbox; \
         gosu redmine git clone --depth 1 https://github.com/hikuram/redmine_bell_notifications.git  plugins/redmine_bell_notifications; \
         gosu redmine git clone --depth 1 https://github.com/hikuram/redmine_markdown_export.git  plugins/redmine_markdown_export; \
+        gosu redmine git clone --depth 1 https://github.com/hikuram/redmine_mermaid_svg.git  plugins/redmine_mermaid_svg; \
+        gosu redmine git clone --depth 1 https://github.com/hikuram/redmine_monaco_editor.git  plugins/redmine_monaco_editor; \
         \
 # install themes
         gosu redmine git clone --depth 1 https://github.com/farend/redmine_theme_farend_basic.git themes/farend_basic; \
