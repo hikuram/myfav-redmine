@@ -1,14 +1,13 @@
-version: "3.7"
-
 services:
-
   redmine:
     build: ./redmine
     container_name: myfav-redmine
     restart: always
     depends_on:
-      - db
-      - chupa-text
+      db:
+        condition: service_healthy
+      chupa-text:
+        condition: service_started
     ports:
       - "3000:3000"
     environment:
@@ -16,8 +15,12 @@ services:
       REDMINE_DB_POSTGRES: db
       REDMINE_DB_DATABASE: redminedb
       REDMINE_DB_USERNAME: redmineuser
-      REDMINE_DB_PASSWORD: redminepassword
+      REDMINE_DB_PASSWORD_FILE: /run/secrets/postgres_password
+      REDMINE_SECRET_KEY_BASE_FILE: /run/secrets/redmine_secret_key_base
       REDMINE_PLUGINS_MIGRATE: "true"
+    secrets:
+      - postgres_password
+      - redmine_secret_key_base
     volumes:
       - "/srv/redmine/files:/usr/src/redmine/files:z"
       - "/var/log/redmine:/usr/src/redmine/log:z"
@@ -30,7 +33,15 @@ services:
       TZ: Asia/Tokyo
       POSTGRES_DB: redminedb
       POSTGRES_USER: redmineuser
-      POSTGRES_PASSWORD: redminepassword
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+    secrets:
+      - postgres_password
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
     volumes:
       - "dbdata:/var/lib/postgresql/data"
 
@@ -42,6 +53,7 @@ services:
       TZ: Asia/Tokyo
     volumes:
       - "/var/log/redmine-chupa-text/proxy:/var/log/squid:z"
+
   chupa-text:
     image: groonga/chupa-text:ubuntu-latest
     container_name: myfav-redmine-chupa-text
@@ -58,3 +70,9 @@ services:
 
 volumes:
   dbdata:
+
+secrets:
+  postgres_password:
+    file: ./secrets/postgres_password
+  redmine_secret_key_base:
+    file: ./secrets/redmine_secret_key_base

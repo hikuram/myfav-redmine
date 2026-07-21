@@ -13,7 +13,6 @@ default:
   # See the examples below and the Rails guide for more configuration options:
   # http://guides.rubyonrails.org/action_mailer_basics.html#action-mailer-configuration
   email_delivery:
-    delivery_method: :file
 
   # ==== Simple SMTP server at localhost
   #
@@ -23,7 +22,7 @@ default:
   #      address: "localhost"
   #      port: 25
   #
-  # ==== SMTP server at example.com using LOGIN authentication and checking HELO for foo.com
+  # ==== SMTP server at example.com using LOGIN authentication and checking HELO for example.com
   #
   #  email_delivery:
   #    delivery_method: :smtp
@@ -31,7 +30,7 @@ default:
   #      address: "example.com"
   #      port: 25
   #      authentication: :login
-  #      domain: 'foo.com'
+  #      domain: 'example.com'
   #      user_name: 'myaccount'
   #      password: 'password'
   #
@@ -139,11 +138,12 @@ default:
   # scm_stderr_log_file: /var/log/redmine_scm_stderr.log
   scm_stderr_log_file:
 
-  # Key used to encrypt sensitive data in the database (SCM and LDAP passwords).
+  # Key used to encrypt sensitive data in the database (SCM passwords,
+  # LDAP passwords, and TOTP (two-factor authentication) secret keys).
   # If you don't want to enable data encryption, just leave it blank.
   # WARNING: losing/changing this key will make encrypted data unreadable.
   #
-  # If you want to encrypt existing passwords in your database:
+  # If you want to encrypt existing data in your database:
   # * set the cipher key here in your configuration file
   # * encrypt data using 'rake db:encrypt RAILS_ENV=production'
   #
@@ -152,12 +152,6 @@ default:
   # * change the cipher key here in your configuration file
   # * encrypt data using 'rake db:encrypt RAILS_ENV=production'
   database_cipher_key:
-
-  # Set this to false to disable plugins' assets mirroring on startup.
-  # You can use `rake redmine:plugins:assets` to manually mirror assets
-  # to public/plugin_assets when you install/upgrade a Redmine plugin.
-  #
-  #mirror_plugins_assets_on_startup: false
 
   # Your secret key for verifying cookie session data integrity. If you
   # change this key, all old sessions will become invalid! Make sure the
@@ -170,8 +164,8 @@ default:
 
   # Requires users to re-enter their password for sensitive actions (editing
   # of account data, project memberships, application settings, user, group,
-  # role, auth source management and project deletion). Disabled by default.
-  # Timeout is set in minutes.
+  # role, auth source management and project deletion). Enabled by default,
+  # set to false to disable. Timeout is set in minutes.
   #
   #sudo_mode: true
   #sudo_mode_timeout: 15
@@ -179,6 +173,14 @@ default:
   # Absolute path (e.g. /usr/bin/convert, c:/im/convert.exe) to
   # the ImageMagick's `convert` binary. Used to generate attachment thumbnails.
   #imagemagick_convert_command:
+
+  # Absolute path (e.g. /usr/bin/gs, c:/ghostscript/gswin64c.exe) to
+  # the `gs` binary. Used to generate attachment thumbnails of PDF files.
+  #gs_command:
+
+  # Timeout when generating thumbnails using the `convert` or `gs` command.
+  # Timeout is set in seconds.
+  #thumbnails_generation_timeout: 10
 
   # Configuration of MiniMagick font.
   #
@@ -203,11 +205,6 @@ default:
   # Maximum number of simultaneous AJAX uploads
   #max_concurrent_ajax_uploads: 2
 
-  # Configure OpenIdAuthentication.store
-  #
-  # allowed values: :memory, :file, :memcache
-  #openid_authentication_store: :memory
-
   # URL of the avatar server
   #
   # By default, Redmine uses Gravatar as the avatar server for displaying
@@ -219,6 +216,51 @@ default:
   #
   #avatar_server_url: https://www.gravatar.com        # default
   #avatar_server_url: https://seccdn.libravatar.org
+
+  # Configure CommonMark hardbreaks behaviour
+  #
+  # allowed values: true, false
+  # true: treats regular line break (\n) as hardbreaks
+  # false: switches to default common mark where two or more spaces are required
+  # common_mark_enable_hardbreaks: true
+
+  # Webhooks
+  #
+  # An optional list of hosts and/or IP addresses and/or IP networks which
+  # should NOT be valid as webhook targets. You can add your internal IPs and
+  # hostnames here to avoid possible SSRF attacks.
+  # webhook_blocklist:
+  #   - 10.0.0.0/8
+  #   - 172.16.0.0/12
+  #   - 192.168.0.0/16
+  #   - fc00::/7
+  #   - example.org
+  #   - "*.example.com"
+
+  # Preview for Office documents (Microsoft Office / LibreOffice)
+  #
+  # Redmine uses Pandoc to convert supported Microsoft Office and LibreOffice
+  # attachments to Markdown for preview. The settings below named
+  # `markdownized_preview_*` control that Markdown-based preview generation.
+  #
+  # Absolute path (e.g. /usr/local/bin/pandoc) to the Pandoc command
+  # used to convert supported attachments to Markdown for preview.
+  #pandoc_command:
+  #
+  # Timeout when generating Markdown previews using the Pandoc command.
+  # Timeout is set in seconds.
+  # Default: 10
+  #markdownized_preview_generation_timeout: 10
+  #
+  # Maximum source file size in bytes for Markdown preview generation.
+  # Files larger than this limit are skipped.
+  # Default: 10485760 (10 megabytes)
+  #markdownized_preview_max_source_size: 10485760
+  #
+  # Maximum output size in bytes saved after Markdown conversion.
+  # Larger output is truncated to this limit.
+  # Default: 102400 (100 kilobytes)
+  #markdownized_preview_max_output_size: 102400
 
 # specific configuration options for production environment
 # that overrides the default ones
