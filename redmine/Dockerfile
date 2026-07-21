@@ -34,6 +34,8 @@ RUN set -eux; \
     gosu redmine git clone -b develop --depth 1 https://github.com/haru/redmine_wiki_extensions.git plugins/redmine_wiki_extensions; \
     gosu redmine git clone --depth 1 https://github.com/haru/redmine_theme_changer.git plugins/redmine_theme_changer; \
     gosu redmine git clone --depth 1 https://github.com/AlphaNodes/redmine_lightbox.git plugins/redmine_lightbox; \
+    \
+    # Install locally maintained plugin forks. \
     gosu redmine git clone --depth 1 https://github.com/hikuram/redmine_bell_notifications.git plugins/redmine_bell_notifications; \
     gosu redmine git clone --depth 1 https://github.com/hikuram/redmine_markdown_export.git plugins/redmine_markdown_export; \
     gosu redmine git clone --depth 1 https://github.com/hikuram/redmine_mermaid_svg.git plugins/redmine_mermaid_svg; \
