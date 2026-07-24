@@ -18,7 +18,7 @@ The default configuration assumes a Linux host. The Redmine image currently supp
 
 - [Full Text Search](https://github.com/clear-code/redmine_full_text_search)
 - [View Customize](https://github.com/onozaty/redmine-view-customize)
-- [Wiki Extensions](https://github.com/haru/redmine_wiki_extensions) (`develop` branch)
+- [Wiki Extensions](https://github.com/haru/redmine_wiki_extensions)
 - [Theme Changer](https://github.com/haru/redmine_theme_changer)
 - [Lightbox](https://github.com/AlphaNodes/redmine_lightbox)
 - [Bell Notifications](https://github.com/hikuram/redmine_bell_notifications) (fork)
